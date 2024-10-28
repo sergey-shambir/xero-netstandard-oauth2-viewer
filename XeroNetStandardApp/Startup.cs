@@ -41,7 +41,6 @@ namespace XeroNetStandardApp
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();

@@ -1,30 +1,30 @@
 @using System.Reflection
 @using Xero.NetStandard.OAuth2.Model.Accounting;
 @using Newtonsoft.Json;
-@model List<Contact>
+@model List<Invoice>
 
 @{
-  string GetFormattedJson(Contact obj)
+  string GetFormattedJson(Invoice obj)
   {
     return JsonConvert.SerializeObject(obj, Formatting.Indented);
   }
 }
 
-<h2>Xero Contacts</h2>
+<h2>Xero Invoices (100 last updated)</h2>
 
 <table class="table-responsive-lg">
   <tr>
     <th>Data</th>
   </tr>
-  @foreach (var contact in Model)
+  @foreach (var invoice in Model)
   {
     <tr>
-      <td><pre>@GetFormattedJson(contact)</pre></td>
+      <td><pre>@GetFormattedJson(invoice)</pre></td>
     </tr>
   }
 </table>
 
-<hr/>
+<hr />
 <br />
 
 <button onclick="location.href='@Url.Action("Index", "Home")'">Back</button>

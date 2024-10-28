@@ -8,17 +8,17 @@ using Microsoft.Extensions.Options;
 
 namespace XeroNetStandardApp.Controllers
 {
-    public class ContactsInfo : ApiAccessorController<AccountingApi>
+    public class AccountsInfo : ApiAccessorController<AccountingApi>
     {
 
-        public ContactsInfo(IOptions<XeroConfiguration> xeroConfig) : base(xeroConfig) { }
+        public AccountsInfo(IOptions<XeroConfiguration> xeroConfig) : base(xeroConfig) { }
 
-        // GET: /ContactsInfo/
+        // GET: /AccountsInfo/
         public async Task<IActionResult> Index()
         {
-            var response = await Api.GetContactsAsync(XeroToken.AccessToken, TenantId);
+            var response = await Api.GetAccountsAsync(XeroToken.AccessToken, TenantId, where: "Type=\"BANK\"");
 
-            return View(response._Contacts);
+            return View(response._Accounts);
         }
     }
 }

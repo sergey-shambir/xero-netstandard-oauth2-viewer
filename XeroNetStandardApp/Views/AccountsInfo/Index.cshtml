@@ -1,25 +1,25 @@
 @using System.Reflection
 @using Xero.NetStandard.OAuth2.Model.Accounting;
 @using Newtonsoft.Json;
-@model List<Contact>
+@model List<Account>
 
 @{
-  string GetFormattedJson(Contact obj)
+  string GetFormattedJson(Account obj)
   {
     return JsonConvert.SerializeObject(obj, Formatting.Indented);
   }
 }
 
-<h2>Xero Contacts</h2>
+<h2>Xero Bank Accounts</h2>
 
 <table class="table-responsive-lg">
   <tr>
     <th>Data</th>
   </tr>
-  @foreach (var contact in Model)
+  @foreach (var account in Model)
   {
     <tr>
-      <td><pre>@GetFormattedJson(contact)</pre></td>
+      <td><pre>@GetFormattedJson(account)</pre></td>
     </tr>
   }
 </table>

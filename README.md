@@ -2,6 +2,10 @@
 
 _Сделано на основе Xero NetStandard OAuth 2.0 Starter App_
 
+Отображает сущности, доступные через Xero Accounting API, в виде JSON
+
+- Для большинства типов сущностей показывается 100 только последних по дате изменения
+
 ## Регистрация приложения в Xero
 
 You will need your Xero app credentials created to run this demo app. 

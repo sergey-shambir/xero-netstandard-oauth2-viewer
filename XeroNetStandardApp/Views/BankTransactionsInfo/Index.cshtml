@@ -1,25 +1,30 @@
-@model dynamic
+@using System.Reflection
+@using Xero.NetStandard.OAuth2.Model.Accounting;
+@using Newtonsoft.Json;
+@model List<BankTransaction>
 
-<h2>Xero BankTransactions</h2>
+@{
+  string GetFormattedJson(BankTransaction obj)
+  {
+    return JsonConvert.SerializeObject(obj, Formatting.Indented);
+  }
+}
+
+<h2>Xero BankTransactions (100 last updated)</h2>
 
 <table class="table-responsive-lg">
   <tr>
-    <th>Date</th>
-    <th>Reference</th>
-    <th>Type</th>
-    <th>Total</th>
+    <th>Data</th>
   </tr>
-  @foreach (var bankTransaction in Model) {
+  @foreach (var transaction in Model)
+  {
     <tr>
-      <td>@bankTransaction.Date.ToString("d/MM/yy")</td>
-      <td>@bankTransaction.Reference</td>
-      <td>@bankTransaction.Type</td>
-      <td>@bankTransaction.Total</td>
+      <td><pre>@GetFormattedJson(transaction)</pre></td>
     </tr>
   }
 </table>
 
-<hr/>
+<hr />
 <br />
 
 <button onclick="location.href='@Url.Action("Index", "Home")'">Back</button>

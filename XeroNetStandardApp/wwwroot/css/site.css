@@ -24,6 +24,19 @@ a {
   border-color: #1861ac;
 }
 
+table {
+  border-collapse: collapse;
+  border: 1px dotted black;
+  width: 100%;
+}
+
+td, th {
+  padding-left: 2px;
+  padding-right: 2px;
+  border-collapse: collapse;
+  border: 1px dotted black;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {

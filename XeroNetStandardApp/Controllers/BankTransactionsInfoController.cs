@@ -15,7 +15,7 @@ namespace XeroNetStandardApp.Controllers
         // GET: /BankTransactionsInfo/
         public async Task<IActionResult> Index()
         {
-            var response = await Api.GetBankTransactionsAsync(XeroToken.AccessToken, TenantId);
+            var response = await Api.GetBankTransactionsAsync(XeroToken.AccessToken, TenantId, pageSize: 100, page: 1, order: "UpdatedDateUTC DESC");
 
             return View(response._BankTransactions);
         }

@@ -1,0 +1,30 @@
+@using System.Reflection
+@using Xero.NetStandard.OAuth2.Model.Accounting;
+@using Newtonsoft.Json;
+@model List<Journal>
+
+@{
+  string GetFormattedJson(Journal obj)
+  {
+    return JsonConvert.SerializeObject(obj, Formatting.Indented);
+  }
+}
+
+<h2>Xero Journals (100 first records)</h2>
+
+<table class="table-responsive-lg">
+  <tr>
+    <th>Data</th>
+  </tr>
+  @foreach (var obj in Model)
+  {
+    <tr>
+      <td><pre>@GetFormattedJson(obj)</pre></td>
+    </tr>
+  }
+</table>
+
+<hr/>
+<br />
+
+<button onclick="location.href='@Url.Action("Index", "Home")'">Back</button>

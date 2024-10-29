@@ -8,44 +8,47 @@
     @if (Model == false)
     {
         <p>
-            <button onclick="location.href='@Url.Action("Index", "Authorization")'">Connect to Xero</button>
+            <a href="@Url.Action("Index", "Authorization")" class="btn btn-primary">Connect to Xero</a>
         </p>
     }
     else
     {
         <h5>API Sets</h5>
-        <p style="color: grey"> You are connected to your Xero organisation. Try the following operations:</p>
+        <p> You are connected to your Xero organisation. Try the following operations:</p>
 
         <h6> Accounting APIs: </h6>
-
-        <section style="margin-left: 10px">
-            <p><button onclick="location.href='@Url.Action("Index", "OrganisationInfo")'">Get Organisation Information</button></p>
-
-            <p><button onclick="location.href='@Url.Action("Index", "ContactsInfo")'">Get Contacts</button></p>
-
-            <p><button onclick="location.href='@Url.Action("Index", "ItemsInfo")'">Get Items</button></p>
-
-            <p><button onclick="location.href='@Url.Action("Index", "InvoiceInfo")'">Get Invoices</button></p>
-
-            <p><button onclick="location.href='@Url.Action("Index", "PaymentInfo")'">Get Payments</button></p>
-
-            <p><button onclick="location.href='@Url.Action("Index", "PrepaymentInfo")'">Get Prepayments</button></p>
-
-            <p><button onclick="location.href='@Url.Action("Index", "OverpaymentInfo")'">Get Overpayments</button></p>
-
-            <p><button onclick="location.href='@Url.Action("Index", "AccountsInfo")'">Get Accounts</button></p>
-
-            <p><button onclick="location.href='@Url.Action("Index", "BankTransactionsInfo")'">Get Bank Transactions</button></p>
-
-            <p><button onclick="location.href='@Url.Action("Index", "BankTransfersInfo")'">Get Bank Transfers</button></p>
-        </section>
+        <div class="row align-items-start">
+            <div class="col">
+                <p><a href="@Url.Action("Index", "OrganisationInfo")" class="btn btn-primary">Get Organisation</a></p>
+                <p><a href="@Url.Action("Index", "ContactsInfo")" class="btn btn-primary">Get Contacts</a></p>
+                <p><a href="@Url.Action("Index", "ContactGroupsInfo")" class="btn btn-primary">Get Contact Groups</a></p>
+                <p><a href="@Url.Action("Index", "ItemsInfo")" class="btn btn-primary">Get Items</a></p>
+                <p><a href="@Url.Action("Index", "TaxRatesInfo")" class="btn btn-primary">Get Tax Rates</a></p>
+                <p><a href="@Url.Action("Index", "EmployeesInfo")" class="btn btn-primary">Get Employees</a></p>
+                <p><a href="@Url.Action("Index", "BudgetsInfo")" class="btn btn-primary">Get Budgets</a></p>
+            </div>
+            <div class="col">
+                <p><a href="@Url.Action("Index", "InvoiceInfo")" class="btn btn-primary">Get Invoices</a></p>
+                <p><a href="@Url.Action("Index", "CreditNotesInfo")" class="btn btn-primary">Get Credit Notes</a></p>
+                <p><a href="@Url.Action("Index", "PurchaseOrdersInfo")" class="btn btn-primary">Get Purchase Orders</a></p>
+                <p><a href="@Url.Action("Index", "QuotesInfo")" class="btn btn-primary">Get Quotes</a></p>
+                <p><a href="@Url.Action("Index", "PaymentInfo")" class="btn btn-primary">Get Payments</a></p>
+                <p><a href="@Url.Action("Index", "PrepaymentInfo")" class="btn btn-primary">Get Prepayments</a></p>
+                <p><a href="@Url.Action("Index", "OverpaymentInfo")" class="btn btn-primary">Get Overpayments</a></p>
+            </div>
+            <div class="col">
+                <p><a href="@Url.Action("Index", "AccountsInfo")" class="btn btn-primary">Get Accounts</a></p>
+                <p><a href="@Url.Action("Index", "BankTransactionsInfo")" class="btn btn-primary">Get Bank Transactions</a>
+                </p>
+                <p><a href="@Url.Action("Index", "JournalsInfo")" class="btn btn-primary">Get Journals</a></p>
+                <p><a href="@Url.Action("Index", "ManualJournalsInfo")" class="btn btn-primary">Get Manual Journals</a></p>
+                <p><a href="@Url.Action("Index", "BankTransfersInfo")" class="btn btn-primary">Get Bank Transfers</a></p>
+                <p><a href="@Url.Action("Index", "LinkedTransactionsInfo")" class="btn btn-primary">Get Linked
+                        Transactions</a></p>
+            </div>
+        </div>
 
         <h6> Identity APIs: </h6>
-
-        <section style="margin-left: 10px">
-
-            <p><button onclick="location.href='@Url.Action("Index", "IdentityInfo")'">Get Connections</button></p>
-        </section>
+        <p><a href="@Url.Action("Index", "IdentityInfo")" class="btn btn-primary">Get Connections</a></p>
     }
-
 </div>

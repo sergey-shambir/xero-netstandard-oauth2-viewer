@@ -1,0 +1,30 @@
+@using System.Reflection
+@using Xero.NetStandard.OAuth2.Model.Accounting;
+@using Newtonsoft.Json;
+@model List<ContactGroup>
+
+@{
+  string GetFormattedJson(ContactGroup obj)
+  {
+    return JsonConvert.SerializeObject(obj, Formatting.Indented);
+  }
+}
+
+<h2>Xero Contact Groups</h2>
+
+<table class="table-responsive-lg">
+  <tr>
+    <th>Data</th>
+  </tr>
+  @foreach (var contact in Model)
+  {
+    <tr>
+      <td><pre>@GetFormattedJson(contact)</pre></td>
+    </tr>
+  }
+</table>
+
+<hr/>
+<br />
+
+<button onclick="location.href='@Url.Action("Index", "Home")'">Back</button>

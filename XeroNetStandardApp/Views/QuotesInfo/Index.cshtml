@@ -1,0 +1,23 @@
+@using System.Reflection
+@using Xero.NetStandard.OAuth2.Model.Accounting;
+@using Newtonsoft.Json;
+@model List<Quote>
+
+<h2>Xero Quotes (100 last updated)</h2>
+
+<table class="table-responsive-lg">
+  <tr>
+    <th>Data</th>
+  </tr>
+  @foreach (var obj in Model)
+  {
+    <tr>
+      <td><pre>@JsonConvert.SerializeObject(obj, Formatting.Indented)</pre></td>
+    </tr>
+  }
+</table>
+
+<hr/>
+<br />
+
+<button onclick="location.href='@Url.Action("Index", "Home")'">Back</button>
